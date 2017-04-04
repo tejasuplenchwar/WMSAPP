@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_generate_invoice"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context="com.example.admin.wmsapp.Activity.activity.GenerateInvoice">
+   <!-- <LinearLayout
+        android:id="@+id/layoutInvoiceNo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Invoice-No"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"/>
+        <TextView
+            android:textSize="17sp"
+            android:id="@+id/textInvoiceNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"   />
+    </LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/layoutBillTo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+            <TextView
+                     android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="Bill-To"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            <TextView
+                    android:textSize="15sp"
+                    android:id="@+id/textBillTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"   />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="1dp"
+        android:layout_below="@+id/layoutBillTo"
+        android:id="@+id/layoutInvoiceDate"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Invoice Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textInvoiceDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"   />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="1dp"
+        android:layout_below="@+id/layoutInvoiceDate"
+        android:id="@+id/layoutValidDate"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Valid Till"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+
+
+        <TextView
+            android:layout_weight="0.4"
+            android:textSize="15sp"
+            android:id="@+id/textValidDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+
+            android:id="@+id/imageButton"
+            android:src="@drawable/ic_menu_camera"
+            android:onClick="calender"
+            android:layout_width="20dp"
+            android:layout_height="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="1dp"
+        android:layout_below="@+id/layoutValidDate"
+        android:id="@+id/layoutPO"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="PO#"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textPO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"   />
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:layout_below="@+id/layoutPO"
+        android:id="@+id/layoutMatText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:paddingLeft="20dp"
+            android:background="#bfbbbb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Material Name"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.2"/>
+
+        <TextView
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:background="#bfbbbb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Qty"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.3"/>
+
+        <TextView
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:background="#bfbbbb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.3"
+            android:id="@+id/textView3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/layoutMatText"
+        android:id="@+id/layoutMatList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+      >
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+    </LinearLayout>
+    <TextView
+        android:paddingTop="1dp"
+        android:layout_below="@+id/layoutMatList"
+        android:background="#bfbbbb"
+        android:layout_width="match_parent"
+        android:layout_height="2sp" />
+
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:id="@+id/layoutSubTot"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/layoutMatList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+         <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+             <TextView
+                 android:textSize="15sp"
+                 android:textStyle="bold"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Subtotal"
+                 android:layout_weight="0.4"
+                 android:id="@+id/textView4" />
+
+             <TextView
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:gravity="right"
+                android:id="@+id/textSubTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Discount(%)"
+                android:layout_weight="0.3"/>
+
+            <EditText
+                android:id="@+id/editDiscount"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:paddingTop="10dp"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:id="@+id/textDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15sp"
+              android:layout_weight="0.2"
+                android:text="Tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/spinner_title"
+                ></Spinner>
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/vatRemove"
+                android:src="@drawable/minus"
+                android:onClick="vatRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:textSize="15sp"
+                android:id="@+id/textVat"
+                android:hint="textvat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/textVatData"
+                android:gravity="right"
+                android:text="abc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:text=" "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/spinner_title"
+                ></TextView>
+
+
+
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/cstRemove"
+                android:src="@drawable/minus"
+                android:onClick="cstRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:textSize="15sp"
+                android:id="@+id/textCST"
+                android:hint="textCst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/textCSTData"
+                android:gravity="right"
+                android:text="abc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:text=" "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/spinner_title"
+                ></TextView>
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/sbRemove"
+                android:src="@drawable/minus"
+                android:onClick="sbRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:textSize="15sp"
+                android:id="@+id/textSwachhBharat"
+                android:hint="textvat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.2"
+                android:id="@+id/textSwachhBharatData"
+                android:gravity="right"
+                android:text="abc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+
+            android:id="@+id/runtimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+        </LinearLayout>
+<!--
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    &lt;!&ndash;<Spinner
+        android:textSize="15sp"
+        android:layout_weight="0.3"
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/spinner_title"
+        ></Spinner>
+
+
+    <TextView
+            android:layout_weight="0.3"
+            android:textSize="15sp"
+            android:id="@+id/textVat"
+            android:hint="textvat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="15sp"
+        android:layout_weight="0.3"
+        android:id="@+id/textVatData"
+        android:gravity="right"
+        android:text="abc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    &lt;!&ndash;<ImageButton
+        android:background="@null"
+        android:id="@+id/vatRemove"
+        android:src="@android:drawable/ic_delete"
+        android:onClick="vatRemove"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />&ndash;&gt;
+
+</LinearLayout>
+        <LinearLayout
+            android:paddingTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.2"
+                android:textSize="15sp"
+                android:id="@+id/textCST"
+                android:hint="textCst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.8"
+                android:id="@+id/textCSTData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/cstRemove"
+                android:src="@android:drawable/ic_delete"
+                android:onClick="cstRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="0.2"
+                android:textSize="15sp"
+                android:id="@+id/textSwachhBharat"
+                android:hint="textSwachhBharat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_weight="0.8"
+                android:id="@+id/textSwachhBharatData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/sbRemove"
+                android:src="@android:drawable/ic_delete"
+                android:onClick="sbRemove"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </LinearLayout>
+-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:background="#cfcbcb"
+                android:id="@+id/textTotal"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:layout_weight="0.4"
+                />
+
+            <TextView
+                android:background="#cfcbcb"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:id="@+id/textTotalData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Generate"
+                android:layout_weight="0.5"
+                android:onClick="generate"
+                />
+
+            <Button
+                android:layout_gravity="right"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:onClick="cancel"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+</ScrollView>

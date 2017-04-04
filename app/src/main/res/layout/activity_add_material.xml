@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_add_material"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.admin.wmsapp.Activity.activity.AddMaterialActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+      <TextView
+          android:paddingLeft="5dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Category"
+          android:layout_weight="0.5"/>
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinnerSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            app:hintText="select category"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <EditText
+            android:id="@+id/editMaterialName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:layout_weight="0.5"
+            android:hint="Material Name"
+             />
+
+        <EditText
+            android:id="@+id/editMaterialCode"
+            android:textSize="15dp"
+            android:layout_weight="0.5"
+            android:hint="Material Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>
+        <EditText
+            android:id="@+id/editMaterialDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:hint="Material Description"
+            />
+
+
+    <LinearLayout
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:layout_weight="0.5"
+            android:text="Unit Of Measure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:layout_weight="0.5"
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/spinner_title"
+            ></Spinner>
+
+    </LinearLayout>
+
+        <EditText
+            android:id="@+id/editUnitPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:hint="Unit Price"
+
+            />
+    <TextView
+        android:text="Select Image"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/materialImage"
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+
+        android:onClick="imageUpload"
+        android:textAllCaps="false"
+        android:text="Upload Image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="save"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4" />
+
+
+</LinearLayout>

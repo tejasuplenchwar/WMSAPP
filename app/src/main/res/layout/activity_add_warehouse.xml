@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_warehouse"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.wmsapp.Activity.activity.AddWarehouseActivity">
+
+
+    <EditText
+        android:id="@+id/editWarehouseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Warehouse Name"
+        />
+
+    <EditText
+        android:id="@+id/editWarehouseRegion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Warehouse Region"
+        />
+
+    <EditText
+        android:id="@+id/editWarehouseloc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Warehouse Location"
+        />
+
+    <Button
+        android:onClick="addWarehouse"
+        android:text="Add Warehouse"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

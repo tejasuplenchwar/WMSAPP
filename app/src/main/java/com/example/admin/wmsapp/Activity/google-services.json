@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "782009637829",
+    "project_id": "wmsapp-157904"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782009637829:android:cc6023a169b5bc8b",
+        "android_client_info": {
+          "package_name": "com.example.admin.wmsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782009637829-hpco4eciondr9ph477q4mq5jmg6ioev4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4Nsml2jMbl2IJUakLAwC7ejE59vdLpEs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

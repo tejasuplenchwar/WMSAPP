@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_category"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.admin.wmsapp.Activity.activity.AddCategoryActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+    <TextView
+
+    android:background="#0e9c8d"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    android:textColor="#ffffff"
+    android:gravity="center_horizontal|center_vertical"
+    android:text="Add Category"
+    android:layout_width="match_parent"
+    android:layout_height="40dp" />
+</LinearLayout>
+    <EditText
+        android:paddingTop="30dp"
+        android:id="@+id/editCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Category Name"
+
+        />
+    <EditText
+        android:id="@+id/editCategoryDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="2"
+        android:hint="Category Desc"
+   />
+<LinearLayout
+    android:paddingTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:textAllCaps="false"
+        android:text="Add"
+        android:id="@+id/categoryAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+</LinearLayout>

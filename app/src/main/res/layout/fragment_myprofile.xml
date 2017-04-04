@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<LinearLayout
+    android:id="@+id/layoutName"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_weight="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"/>
+
+    <TextView
+        android:textSize="15sp"
+        android:id="@+id/textName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3
+        "/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/layoutName"
+        android:id="@+id/layoutMail"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mail"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3
+        "/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/layoutMail"
+        android:id="@+id/layoutOrg"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Organisation"
+            android:id="@+id/textView5" />
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textOrganisation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3
+        "/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/layoutOrg"
+        android:id="@+id/layoutRole"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Role"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:id="@+id/textRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3
+        "/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/layoutRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+<Button
+    android:id="@+id/buttonLogout"
+    android:textAllCaps="false"
+    android:text="Logout"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

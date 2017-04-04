@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_contractor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.wmsapp.Activity.activity.AddContractorActivity">
+
+    <EditText
+        android:id="@+id/editContractorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Contractor Name"
+
+        />
+   <EditText
+        android:id="@+id/editContractorAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="2"
+        android:hint="Contractor Address"
+        />
+
+    <EditText
+        android:id="@+id/editContractorNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:inputType="phone"
+        android:hint="Contractor Number"
+        />
+    <EditText
+        android:id="@+id/editContractorEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:maxLines="1"
+        android:hint="Contractor Email"
+        />
+    <Button
+        android:onClick="addContractor"
+        android:text="Add Contractor"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>
