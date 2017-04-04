@@ -57,7 +57,7 @@ public class MenuAdapter extends ArrayAdapter<Menu> {
         TextView textMenuName= (TextView) layout.findViewById(R.id.textMenuName);
         TextView textMenuIcon= (TextView) layout.findViewById(R.id.textMenuIcon);
 
-        textMenuId.setText("Menu-Id"+menu.getMenu_id());
+        textMenuId.setText("MenuId-"+menu.getMenu_id());
         textMenuName.setText(menu.getMenu_name());
         textMenuIcon.setText(menu.getMenu_icon());
         return layout;

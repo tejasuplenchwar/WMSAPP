@@ -36,6 +36,7 @@ public class Menu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.menu, container, false);
+        listView= (ListView) view.findViewById(R.id.listView);
         getAllMenu();
         return view;
     }
