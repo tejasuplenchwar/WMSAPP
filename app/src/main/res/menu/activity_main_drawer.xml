@@ -65,7 +65,7 @@
         <item
             android:id="@+id/nav_rolemenu"
             android:icon="@drawable/ic_menu_share"
-            android:title="Invite" />
+            android:title="RoleMenu" />
 
 
     </group>
