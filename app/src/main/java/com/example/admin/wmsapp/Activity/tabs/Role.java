@@ -37,7 +37,7 @@ public class Role extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.role, container, false);
         listView= (ListView) view.findViewById(R.id.listView);
-        //getAllRole();
+        getAllRole();
         return view;
     }
 
