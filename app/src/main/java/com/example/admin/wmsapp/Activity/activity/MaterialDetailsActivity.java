@@ -49,7 +49,7 @@ public class MaterialDetailsActivity extends AppCompatActivity {
 
 
         Picasso.with(this)
-                .load("http://192.168.100.8:1339/"+material.getMaterialImage())
+                .load("devsrv03-pun:1339/"+material.getMaterialImage())
                 .resize(150, 150)
                 .into(materialImage);
    }

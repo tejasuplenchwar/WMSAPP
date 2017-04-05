@@ -239,8 +239,10 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
             }
+
         });
 
+        Toast.makeText(this, "Invoice Generated Successfully...!!!!", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this,InvoiceList.class));
     }
 

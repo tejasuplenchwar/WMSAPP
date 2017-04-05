@@ -15,6 +15,7 @@
         android:layout_weight="0.2"/>
 
     <TextView
+        android:gravity="right"
         android:id="@+id/textMaterialQty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

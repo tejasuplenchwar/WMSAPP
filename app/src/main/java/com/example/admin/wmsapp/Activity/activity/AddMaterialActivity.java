@@ -88,13 +88,13 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
 
 
     EditText editMaterialName,editMaterialDesc,editUnitPrice,editMaterialCode;
-    Spinner spinner;
+
 
     ImageView materialImage;
     Bitmap imageBitmap;
     String item;
     String []file;
-    SearchableSpinner spinnerSearch;
+    SearchableSpinner spinnerSearch,spinner;
     String selectedImagePath;
     ArrayList<Category> categories=new ArrayList<>();
     Material material = new Material();
@@ -102,7 +102,7 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
     String material_image,imageName;
     static final int PICK_IMAGE_REQUEST = 1;
     String filePath;
-    String upLoadUrl = "http://192.168.100.8:1339/users/materialUpload";
+    String upLoadUrl = "http://192.168.100.40:1339/users/materialUpload";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,7 +127,7 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
 
         materialImage= (ImageView) findViewById(R.id.materialImage);
 
-        materialImage.setOnClickListener(new View.OnClickListener() {
+       /* materialImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -136,8 +136,8 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
                 startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST);
 
             }
-        });
-        spinner=(Spinner)findViewById(R.id.spinner);
+        });*/
+        spinner= (SearchableSpinner) findViewById(R.id.spinner);
 
 
         spinner.setOnItemSelectedListener(this);
@@ -206,7 +206,10 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
 
      public void imageUpload(View v){
 
-         imageUpload(filePath);
+         Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+         // Start the Intent
+         startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST);
+       //  imageUpload(filePath);
 
      }
 @Override
@@ -238,7 +241,7 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
         }
         else {
 
-
+            imageUpload(filePath);
             material.setMaterialName(editMaterialName.getText().toString());
             material.setMaterialDesc(editMaterialDesc.getText().toString());
             material.setUnitOfMeasure(item);

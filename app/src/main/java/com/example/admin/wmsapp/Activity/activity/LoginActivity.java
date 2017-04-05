@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import android.util.Base64;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import static com.example.admin.wmsapp.Activity.Model.Constants.APPID;
 import static com.example.admin.wmsapp.Activity.Model.Constants.EMAIL;
 import static com.example.admin.wmsapp.Activity.Model.Constants.EXPTOKEN;
 import static com.example.admin.wmsapp.Activity.Model.Constants.NAME;
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
     String app_name="WMS",token="",user,password;
 
-    public  final String BASE_URL="http://192.168.100.14:1337/pFactory/";
+    public  final String BASE_URL="http://192.168.100.40:1337/pFactory/";
 
 
    /* SharedPreferences sharedpreferences;*/
@@ -59,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
     public static  String _orgId="";
     public static  String _orgName="";
     public static  String exp="";
+    public static  String _a="";
 
 
     @Override
@@ -93,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
 
             try{
 
-               URL url = new URL("http://192.168.100.14:1337/pFactory/mlogin");
+               URL url = new URL("http://192.168.100.40:1337/pFactory/mlogin");
 
                 JSONObject postDataParams = new JSONObject();
                 postDataParams.put("email",user);
@@ -182,8 +185,9 @@ public class LoginActivity extends AppCompatActivity {
                  _orgName=accessToken.getString("_orgName");
                  _orgId=accessToken.getString("_orgId");
                  exp=accessToken.getString("exp");
-
+                 _a=accessToken.getString("_a");
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+
                 preferences.edit()
                     .putString(EXPTOKEN,exp)
                     .putString(NAME,name)
@@ -191,12 +195,14 @@ public class LoginActivity extends AppCompatActivity {
                     .putString(ROLE,role)
                     .putString(ORGID,_orgId)
                     .putString(ORGNAME,_orgName)
+                    .putString(APPID,_a)
                     .commit();
 
                 Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(intent);
             } catch (JSONException e) {
                 e.printStackTrace();
+                Toast.makeText(LoginActivity.this, "Login Exception Some fi", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -236,6 +242,16 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void cancel(View v){
-      finish();
+
+        Intent  intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
     }
 }

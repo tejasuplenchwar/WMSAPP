@@ -12,6 +12,8 @@ public class Contractor implements Serializable{
     private String ctrAddress;
     private String ctrEmailId;
     private String organisationId;
+    private String ctrStatus;
+    private String ctrCode;
 
     private String ctrNum;
 
@@ -61,6 +63,22 @@ public class Contractor implements Serializable{
 
     public void setCtrEmailId(String ctrEmailId) {
         this.ctrEmailId = ctrEmailId;
+    }
+
+    public String getCtrStatus() {
+        return ctrStatus;
+    }
+
+    public void setCtrStatus(String ctrStatus) {
+        this.ctrStatus = ctrStatus;
+    }
+
+    public String getCtrCode() {
+        return ctrCode;
+    }
+
+    public void setCtrCode(String ctrCode) {
+        this.ctrCode = ctrCode;
     }
 
     @Override

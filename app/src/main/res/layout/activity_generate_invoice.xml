@@ -157,7 +157,7 @@
             android:layout_weight="0.2"/>
 
         <TextView
-            android:gravity="center"
+            android:gravity="right"
             android:paddingLeft="20dp"
             android:background="#bfbbbb"
             android:layout_width="match_parent"
@@ -168,7 +168,7 @@
             android:layout_weight="0.3"/>
 
         <TextView
-            android:gravity="center"
+            android:gravity="right"
             android:paddingLeft="20dp"
             android:background="#bfbbbb"
             android:layout_width="match_parent"

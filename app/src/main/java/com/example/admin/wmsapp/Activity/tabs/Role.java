@@ -32,6 +32,7 @@ public class Role extends Fragment{
     ListView listView;
     ArrayList<com.example.admin.wmsapp.Activity.Model.Role> roleList=new ArrayList<>();
     RoleAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

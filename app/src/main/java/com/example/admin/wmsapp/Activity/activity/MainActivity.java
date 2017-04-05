@@ -49,6 +49,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.admin.wmsapp.Activity.Model.Constants.APPID;
 import static com.example.admin.wmsapp.Activity.Model.Constants.EMAIL;
 import static com.example.admin.wmsapp.Activity.Model.Constants.NAME;
 import static com.example.admin.wmsapp.Activity.Model.Constants.ORGID;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity
     public static  String role;
     public static  String _orgId;
     public static  String _orgName;
+    public static  String _a;
 
 
     Retrofit retrofit = new Retrofit.Builder()
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-TextView textUserName;
+TextView textUserName,textOrganisation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,7 @@ TextView textUserName;
         role=preferences.getString(ROLE,"");
         _orgId=preferences.getString(ORGID,"");
         _orgName=preferences.getString(ORGNAME,"");
-
+        _a=preferences.getString(APPID,"");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,7 +108,9 @@ TextView textUserName;
 
         View header=navigationView.getHeaderView(0);
         textUserName= (TextView) header.findViewById(R.id.textUserName);
-        textUserName.setText(email);
+        textOrganisation= (TextView) header.findViewById(R.id.textOrganisation);
+        textUserName.setText(name);
+        textOrganisation.setText(_orgName);
         navigationView.setCheckedItem(R.id.nav_dashboard);
         navigationView.setActivated(true);
         navigationView.setNavigationItemSelectedListener(this);
@@ -115,29 +119,34 @@ TextView textUserName;
 
 
         if(MainActivity.role.equals("ADM")){
-            navigationView.getMenu().findItem(R.id.nav_dashboard).setVisible(false);
+
             navigationView.getMenu().findItem(R.id.nav_order).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_inward).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_inventory).setVisible(false);
-            displaySelectedScreen(R.id.nav_category);
+            navigationView.getMenu().findItem(R.id.nav_invoice).setVisible(false);
+            displaySelectedScreen(R.id.nav_dashboard);
         }
         if(MainActivity.role.equals("CTR")){
-          navigationView.getMenu().findItem(R.id.nav_dashboard).setVisible(false);
+
           navigationView.getMenu().findItem(R.id.nav_category).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_material).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_warehouse).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_invite).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_contractor).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_inward).setVisible(false);
-            displaySelectedScreen(R.id.nav_order);
+          navigationView.getMenu().findItem(R.id.nav_rolemenu).setVisible(false);
+
+
+            displaySelectedScreen(R.id.nav_dashboard);
         }
         if(MainActivity.role.equals("WHM")){
-            navigationView.getMenu().findItem(R.id.nav_dashboard).setVisible(false);
+
             navigationView.getMenu().findItem(R.id.nav_category).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_material).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_warehouse).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_invite).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_contractor).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_rolemenu).setVisible(false);
             displaySelectedScreen(R.id.nav_dashboard);
         }
         if(MainActivity.role.equals("generic")){

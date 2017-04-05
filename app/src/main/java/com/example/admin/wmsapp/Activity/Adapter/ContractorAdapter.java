@@ -58,10 +58,12 @@ public class ContractorAdapter extends ArrayAdapter<Contractor>{
         TextView textContractorName=(TextView)layout.findViewById(R.id.textContractorName);
         TextView textContractorAddress=(TextView)layout.findViewById(R.id.textContractorAddress);
         TextView textContractorNumber=(TextView)layout.findViewById(R.id.textContractorNumber);
+        TextView textContractorEmail=(TextView)layout.findViewById(R.id.textContractorEmail);
 
         textContractorName.setText(contractor.getCtrName());
         textContractorAddress.setText(contractor.getCtrAddress());
         textContractorNumber.setText(contractor.getCtrNum());
+        textContractorEmail.setText(contractor.getCtrEmailId());
         return layout;
     }
 }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.example.admin.wmsapp.Activity.activity.MaterialDetailsActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,7 +115,7 @@
 
 
     <LinearLayout
-        android:paddingLeft="5dp"
+
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,7 +128,8 @@
             android:layout_weight="0.5"
             android:text="Unit Of Measure"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" />
 
         <TextView
             android:id="@+id/textUOM"

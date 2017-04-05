@@ -1,7 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    
-</LinearLayout>
+  <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editFirstName"
+        android:textSize="15sp"
+        android:hint="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+
+    <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editLastName"
+        android:textSize="15sp"
+        android:hint="Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+     />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:paddingTop="10dp"
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintText="Select Role"
+        />
+
+    <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editEmailAddress"
+        android:textSize="15sp"
+        android:hint="Email address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editAddress"
+        android:textSize="15sp"
+        android:hint="Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingTop="10dp"
+        android:id="@+id/editPhone"
+        android:textSize="15sp"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingTop="10dp"
+
+        android:id="@+id/editContractorCode"
+        android:textSize="15sp"
+        android:hint="Contractor Code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+  </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+      <Button
+          android:id="@+id/buttonInviteUser"
+          android:textAllCaps="false"
+          android:text="Invite User"
+          android:layout_weight="0.5"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:textAllCaps="false"
+            android:text="Cancel"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+       </LinearLayout>
+</RelativeLayout>

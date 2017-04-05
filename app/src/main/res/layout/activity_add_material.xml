@@ -12,18 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-      <TextView
-          android:paddingLeft="5dp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Category"
-          android:layout_weight="0.5"/>
+
         <com.toptoche.searchablespinnerlibrary.SearchableSpinner
             android:id="@+id/spinnerSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            app:hintText="select category"/>
+
+            app:hintText="Select category"/>
 
     </LinearLayout>
     <LinearLayout
@@ -65,24 +60,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
 
-            android:layout_weight="0.5"
-            android:text="Unit Of Measure"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
             android:layout_weight="0.5"
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="@string/spinner_title"
-            ></Spinner>
-
-    </LinearLayout>
+            app:hintText="Unit  measure"
+            />
 
         <EditText
+            android:layout_weight="0.5"
             android:id="@+id/editUnitPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +79,10 @@
             android:hint="Unit Price"
 
             />
+
+    </LinearLayout>
+
+
     <TextView
         android:text="Select Image"
         android:gravity="center_horizontal"
@@ -106,7 +98,7 @@
 
         android:onClick="imageUpload"
         android:textAllCaps="false"
-        android:text="Upload Image"
+        android:text="Select Image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -116,7 +108,7 @@
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button4" />
+         />
 
 
 </LinearLayout>
