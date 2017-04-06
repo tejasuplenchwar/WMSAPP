@@ -5,70 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/processfactory"
+
 
 
     tools:context="com.example.admin.wmsapp.Activity.activity.LoginActivity">
 
+ <LinearLayouts
+    android:paddingTop="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <ImageView
         android:src="@drawable/india"
         android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/imageView" />
 
-    <LinearLayout
+</LinearLayouts>
 
-    android:background="#f5f4f4"
-     android:paddingRight="10dp"
-     android:paddingLeft="10dp"
+
+    <LinearLayout
+    android:layout_gravity="center_vertical"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center_vertical">
-
-        <EditText
-            android:paddingLeft="10dp"
-            android:id="@+id/editUserName"
-            android:hint="enter user name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <EditText
-        android:id="@+id/editUserPassword"
-        android:hint="enter user name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+    android:orientation="vertical">
 
     <LinearLayout
-        android:paddingTop="30dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+       android:background="@drawable/shape"
+       android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_weight="0.5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="1dp"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:text="Login"
-            android:onClick="login"
-          />
+        android:orientation="vertical"
+        >
 
-        <Button
-            android:paddingLeft="1dp"
-            android:layout_weight="0.5"
+
+        <EditText
+
+                android:id="@+id/editUserName"
+                android:hint="enter user name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <EditText
+       android:id="@+id/editUserPassword"
+       android:hint="enter password"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:paddingTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            android:text="Cancel"
-            android:onClick="cancel"/>
+            android:orientation="horizontal">
+            <Button
+                android:drawableLeft="@drawable/login"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="2dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:text="Login"
+                android:onClick="login"
+                />
+
+            <Button
+                android:drawableLeft="@drawable/cancel"
+
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:text="Cancel"
+                android:onClick="cancel"/>
+        </LinearLayout>
+
+
     </LinearLayout>
+</LinearLayout>
 
 
 </LinearLayout>

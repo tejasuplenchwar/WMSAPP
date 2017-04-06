@@ -7,6 +7,10 @@ package com.example.admin.wmsapp.Activity.Model;
 
     public class Constants {
         public static final String ROOT_URL="http://192.168.100.14:9090/WarehouseMgmt/";
+
+
+        public static final String BASE_URL="http://192.168.100.40:1337/";
+
         public static final String EXPTOKEN = "EXPTOKEN";
         public static final String NAME = "NAME";
         public static final String EMAIL = "EMAIL";

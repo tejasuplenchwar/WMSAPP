@@ -36,6 +36,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.admin.wmsapp.Activity.Model.Constants.BASE_URL;
 import static com.example.admin.wmsapp.Activity.Model.Constants.ROOT_URL;
 
 /**
@@ -54,7 +55,7 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
     Role role=new Role();
     String roleCode;
 
-    String BASE_URL="http://192.168.100.40:1337/";
+
 
     Retrofit retrofit1=new Retrofit.Builder()
             .baseUrl(BASE_URL)

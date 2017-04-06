@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -50,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     String app_name="WMS",token="",user,password;
 
     public  final String BASE_URL="http://192.168.100.40:1337/pFactory/";
+
+
 
 
    /* SharedPreferences sharedpreferences;*/
