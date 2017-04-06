@@ -37,6 +37,7 @@ import com.example.admin.wmsapp.Activity.fragments.MaterialFragment;
 import com.example.admin.wmsapp.Activity.fragments.MyProfileFragment;
 import com.example.admin.wmsapp.Activity.fragments.OrderFragment;
 import com.example.admin.wmsapp.Activity.fragments.RoleMenuFragment;
+import com.example.admin.wmsapp.Activity.fragments.UsersFragment;
 import com.example.admin.wmsapp.Activity.fragments.WarehouseFragment;
 import com.example.admin.wmsapp.R;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -135,6 +136,7 @@ TextView textUserName,textOrganisation;
           navigationView.getMenu().findItem(R.id.nav_contractor).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_inward).setVisible(false);
           navigationView.getMenu().findItem(R.id.nav_rolemenu).setVisible(false);
+          navigationView.getMenu().findItem(R.id.nav_users).setVisible(false);
 
 
             displaySelectedScreen(R.id.nav_dashboard);
@@ -147,6 +149,7 @@ TextView textUserName,textOrganisation;
             navigationView.getMenu().findItem(R.id.nav_invite).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_contractor).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_rolemenu).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_users).setVisible(false);
             displaySelectedScreen(R.id.nav_dashboard);
         }
         if(MainActivity.role.equals("generic")){
@@ -156,13 +159,9 @@ TextView textUserName,textOrganisation;
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // getAppToken();
-    }
 
-    private void permissions() {
+
+   /* private void permissions() {
         if (android.os.Build.VERSION.SDK_INT >= 23) {
             // only for gingerbread and newer versions
             String permission = android.Manifest.permission.READ_PHONE_STATE;
@@ -178,9 +177,9 @@ TextView textUserName,textOrganisation;
                         MY_PERMISSIONS);
             }
         }
-    }
+    }*/
 
-    @Override
+   /* @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -197,9 +196,9 @@ TextView textUserName,textOrganisation;
                 return;
             }
         }
-    }
+    }*/
 
-    public void reload() {
+   /* public void reload() {
         Intent intent = getIntent();
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -213,8 +212,8 @@ TextView textUserName,textOrganisation;
         String token= FirebaseInstanceId.getInstance().getToken();
         Log.d("ABC","RefreshedToken:- "+token);
 
-       /* TelephonyManager mngr = (TelephonyManager)getSystemService(MainActivity.TELEPHONY_SERVICE);
-        mngr.getDeviceId();*/
+       *//* TelephonyManager mngr = (TelephonyManager)getSystemService(MainActivity.TELEPHONY_SERVICE);
+        mngr.getDeviceId();*//*
         //Log.d("telephonyNo","IMEI:- "+mngr.getDeviceId());
         Toast.makeText(this, "token:-"+token, Toast.LENGTH_SHORT).show();
         Fcm fcm=new Fcm();
@@ -223,8 +222,8 @@ TextView textUserName,textOrganisation;
         addToken(fcm);
 
     }
-
-    private void addToken(Fcm fcm){
+*/
+    /*private void addToken(Fcm fcm){
         TelephonyManager mngr = (TelephonyManager)getSystemService(MainActivity.TELEPHONY_SERVICE);
         mngr.getDeviceId();
         fcm.setImei(mngr.getDeviceId());
@@ -244,7 +243,7 @@ TextView textUserName,textOrganisation;
             }
         });
     }
-
+*/
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -315,7 +314,12 @@ TextView textUserName,textOrganisation;
                 fragment=new RoleMenuFragment();
                 break;
 
-      }
+            case R.id.nav_users:
+                fragment=new UsersFragment();
+                break;
+
+
+        }
 
         //replacing the fragment
         if (fragment != null) {
