@@ -408,6 +408,9 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
+        getTaxByRegion(region);
+
+
 
         editDiscount.addTextChangedListener(new TextWatcher() {
             @Override
@@ -423,8 +426,8 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
 
                 /* textDiscount.setText(""+(Math.round(discountAmt*100)/100));*/
                 textDiscount.setText(precision.format(discountAmt));
-                 spinner.setOnItemSelectedListener(GenerateInvoice.this);
-                discountedAmt=subTotal-discountAmt;
+
+                 discountedAmt=subTotal-discountAmt;
                  total=discountedAmt;
                  textTotalData.setText(precision.format(total));
 
@@ -436,7 +439,13 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
             }
         });
 
-        getTaxByRegion(region);
+
+        if(textDiscount.getText().toString().isEmpty()){
+            discountAmt=0.0;
+            discountedAmt=subTotal-discountAmt;
+            total=discountedAmt;
+            textTotalData.setText(precision.format(total));
+        }
 
 
 
@@ -460,11 +469,13 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
 
             }
         });
+
     }
 
     private void showSpinnerTax(){
 
         TaxInfo taxInfo1=new TaxInfo();
+        taxInfo1.setTaxName("Select Tax");
         spinnerTax.add(taxInfo1);
         for(TaxInfo taxInfo:taxInfoList){
             spinnerTax.add(new TaxInfo(taxInfo.getTaxId(),taxInfo.getTaxName(),taxInfo.getTaxValue()));
@@ -473,6 +484,8 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(dataAdapter);
+        spinner.setOnItemSelectedListener(GenerateInvoice.this);
+
 
 
 
@@ -484,80 +497,81 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
 
       Log.d("check","check"+check);
 
-     if(++check>=1) {
+     if(++check>1) {
              TaxInfo tax= (TaxInfo) parent.getSelectedItem();
              taxId=tax.getTaxId();
              taxName=tax.getTaxName();
              taxValue=tax.getTaxValue();
-                 if(taxName.equals("")){
-                     Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+             if(taxName!=null) {
+                 if (taxName.equals("VAT")) {
+
+                     textVat.setVisibility(View.VISIBLE);
+                     vatRemove.setVisibility(View.VISIBLE);
+                     textVat.setText(taxName + "(" + taxValue + "%)");
+                     editDiscount.setEnabled(false);
+                     textVatData.setVisibility(View.VISIBLE);
+                     taxVatValue = (discountedAmt * taxValue) / 100;
+                     Log.d("abc", "taxVat" + taxVatValue);
+                     textVatData.setText(precision.format(taxVatValue));
+
+
+                     total += taxVatValue;
+                     textTotalData.setText(precision.format(total));
+
+                     TaxList taxs = new TaxList();
+                     taxs.setTaxName(taxName);
+                     taxs.setTaxAmt(taxVatValue);
+                     taxs.setTaxRegion(region);
+                     taxs.setTaxValue(taxValue);
+                     taxList.add(taxs);
+
+                     spinner.setAdapter(dataAdapter);
                  }
-            if (taxName.equals("VAT")) {
 
-                textVat.setVisibility(View.VISIBLE);
-                vatRemove.setVisibility(View.VISIBLE);
-                textVat.setText(taxName + "(" + taxValue + "%)");
-                editDiscount.setEnabled(false);
-                textVatData.setVisibility(View.VISIBLE);
-                taxVatValue = (discountedAmt * taxValue) / 100;
-                Log.d("abc","taxVat"+taxVatValue);
-                textVatData.setText(precision.format(taxVatValue));
+                 if (taxName.equals("CST")) {
+                     textCST.setVisibility(View.VISIBLE);
+                     cstRemove.setVisibility(View.VISIBLE);
+                     textCST.setText(taxName + "(" + taxValue + "%)");
 
+                     textCSTData.setVisibility(View.VISIBLE);
+                     taxCstValue = (discountedAmt * taxValue) / 100;
 
-              total+=taxVatValue;
-                textTotalData.setText(precision.format(total));
-
-                TaxList taxs=new TaxList();
-                taxs.setTaxName(taxName);
-                taxs.setTaxAmt(taxVatValue);
-                taxs.setTaxRegion(region);
-                taxs.setTaxValue(taxValue);
-               taxList.add(taxs);
+                     textCSTData.setText(precision.format(taxCstValue));
 
 
-            }
+                     total += taxCstValue;
+                     TaxList taxs = new TaxList();
+                     taxs.setTaxName(taxName);
+                     taxs.setTaxAmt(taxCstValue);
+                     taxs.setTaxRegion(region);
+                     taxs.setTaxValue(taxValue);
+                     taxList.add(taxs);
+                     textTotalData.setText(precision.format(total));
 
-            if (taxName.equals("CST")) {
-                textCST.setVisibility(View.VISIBLE);
-                cstRemove.setVisibility(View.VISIBLE);
-                textCST.setText(taxName + "(" + taxValue + "%)");
+                     spinner.setAdapter(dataAdapter);
+                 }
+                 if (taxName.equals("Swachh_Bharat")) {
+                     textSwachhBharat.setVisibility(View.VISIBLE);
+                     sbRemove.setVisibility(View.VISIBLE);
+                     textSwachhBharat.setText(taxName + "(" + taxValue + "%)");
 
-                textCSTData.setVisibility(View.VISIBLE);
-                taxCstValue = (discountedAmt * taxValue) / 100;
+                     textSwachhBharatData.setVisibility(View.VISIBLE);
+                     taxSBValue = (discountedAmt * taxValue) / 100;
 
-                textCSTData.setText(precision.format(taxCstValue));
+                     textSwachhBharatData.setText(precision.format(taxSBValue));
 
+                     total += taxSBValue;
+                     TaxList taxs = new TaxList();
+                     taxs.setTaxName(taxName);
+                     taxs.setTaxAmt(taxSBValue);
+                     taxs.setTaxRegion(region);
+                     taxs.setTaxValue(taxValue);
+                     taxList.add(taxs);
+                     textTotalData.setText(precision.format(total));
 
-                total+=taxCstValue;
-                TaxList taxs=new TaxList();
-                taxs.setTaxName(taxName);
-                taxs.setTaxAmt(taxCstValue);
-                taxs.setTaxRegion(region);
-                taxs.setTaxValue(taxValue);
-                taxList.add(taxs);
-                textTotalData.setText(precision.format(total));
-
-            }
-            if (taxName.equals("Swachh_Bharat")) {
-                textSwachhBharat.setVisibility(View.VISIBLE);
-                sbRemove.setVisibility(View.VISIBLE);
-                textSwachhBharat.setText(taxName + "(" + taxValue + "%)");
-
-                textSwachhBharatData.setVisibility(View.VISIBLE);
-                taxSBValue = (discountedAmt * taxValue )/ 100;
-
-                textSwachhBharatData.setText(precision.format(taxSBValue));
-
-               total+=taxSBValue;
-                TaxList taxs=new TaxList();
-                taxs.setTaxName(taxName);
-                taxs.setTaxAmt(taxSBValue);
-                taxs.setTaxRegion(region);
-                taxs.setTaxValue(taxValue);
-                taxList.add(taxs);
-                textTotalData.setText(precision.format(total));
-
-            }
+                     spinner.setAdapter(dataAdapter);
+                 }
+             }
 
 
 

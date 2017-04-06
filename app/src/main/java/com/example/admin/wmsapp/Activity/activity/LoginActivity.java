@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     public static  String _orgName="";
     public static  String exp="";
     public static  String _a="";
+    public static String _r="";
 
 
     @Override
@@ -186,13 +187,14 @@ public class LoginActivity extends AppCompatActivity {
                  _orgId=accessToken.getString("_orgId");
                  exp=accessToken.getString("exp");
                  _a=accessToken.getString("_a");
+                _r=accessToken.getString("_r");
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
 
                 preferences.edit()
                     .putString(EXPTOKEN,exp)
                     .putString(NAME,name)
                     .putString(EMAIL,email)
-                    .putString(ROLE,role)
+                    .putString(ROLE,_r)
                     .putString(ORGID,_orgId)
                     .putString(ORGNAME,_orgName)
                     .putString(APPID,_a)
@@ -202,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             } catch (JSONException e) {
                 e.printStackTrace();
-                Toast.makeText(LoginActivity.this, "Login Exception Some fi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Login Exception Some filed not found", Toast.LENGTH_SHORT).show();
             }
 
 

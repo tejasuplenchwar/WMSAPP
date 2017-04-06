@@ -197,7 +197,7 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
             contractor.setCtrName(editFirstName.getText().toString());
             contractor.setCtrEmailId(editEmailAddress.getText().toString());
             contractor.setCtrCode(editContractorCode.getText().toString());
-            contractor.setCtrCode(editAddress.getText().toString());
+            contractor.setCtrAddress(editAddress.getText().toString());
             contractor.setCtrStatus("Pending");
             contractor.setCtrNum(editPhone.getText().toString());
             contractor.setOrganisationId(MainActivity._orgId);

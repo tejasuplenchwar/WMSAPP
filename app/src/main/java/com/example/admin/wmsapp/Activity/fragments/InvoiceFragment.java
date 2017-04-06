@@ -115,6 +115,7 @@ public class InvoiceFragment extends Fragment  implements AdapterView.OnItemClic
                 loading.dismiss();
                 if(response.body()!=null) {
                     invoiceList = response.body();
+
                     showList();
                 }
 
@@ -131,13 +132,17 @@ public class InvoiceFragment extends Fragment  implements AdapterView.OnItemClic
         ArrayList<Invoice> invoice1=new ArrayList<>();
         Collections.reverse(invoiceList);
         if(MainActivity.role.equals("CTR")){
-             for (Invoice invoice : invoiceList) {
-                  if(invoice.getContractor().getCtrEmailId().equals(MainActivity.email)){
-                      invoice1.add(invoice);
-                  }
-                    invoiceList.clear();
-                    invoiceList.addAll(invoice1);
+             try {
+                 for (Invoice invoice : invoiceList) {
+                     if (invoice.getContractor().getCtrEmailId().equals(MainActivity.email)) {
+                         invoice1.add(invoice);
+                     }
                 }
+                 invoiceList.clear();
+                 invoiceList.addAll(invoice1);
+             }catch (Exception e){
+                 Toast.makeText(getActivity(), "Exception"+e, Toast.LENGTH_SHORT).show();
+            }
       }
         adapter=new InvoiceAdapter(getActivity(),invoiceList);
         listView.setAdapter(adapter);

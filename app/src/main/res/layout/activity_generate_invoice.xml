@@ -43,15 +43,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"/>
-            <TextView
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+        <TextView
                     android:textSize="15sp"
                     android:id="@+id/textBillTo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"   />
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="0dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -70,14 +71,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"/>
         <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+        <TextView
             android:textSize="15sp"
             android:id="@+id/textInvoiceDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"   />
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="0dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -96,6 +98,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"/>
 
+        <ImageButton
+
+            android:id="@+id/imageButton"
+            android:src="@drawable/calender"
+            android:onClick="calender"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <TextView
             android:layout_weight="0.4"
@@ -104,13 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <ImageButton
 
-            android:id="@+id/imageButton"
-            android:src="@drawable/ic_menu_camera"
-            android:onClick="calender"
-            android:layout_width="20dp"
-            android:layout_height="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -128,15 +131,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="0dp" />
+
         <TextView
             android:textSize="15sp"
             android:id="@+id/textPO"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"   />
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="0dp" />
+
     </LinearLayout>
 
     <LinearLayout
