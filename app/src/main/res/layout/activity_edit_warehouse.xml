@@ -92,12 +92,17 @@
             />
 
             </LinearLayout>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp">
         <Button
+            android:background="@drawable/shape1"
+            android:textColor="#FFFFFF"
             android:onClick="update"
             android:text="Update"
             android:textAllCaps="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="35dp" />
+</LinearLayout>
 </LinearLayout>

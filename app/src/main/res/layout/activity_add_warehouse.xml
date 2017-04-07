@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.example.admin.wmsapp.Activity.activity.AddWarehouseActivity">
 
 
@@ -34,12 +35,17 @@
         android:maxLines="1"
         android:hint="Warehouse Location"
         />
-
+<LinearLayout
+    android:paddingTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <Button
+        android:background="@drawable/shape1"
+        android:textColor="#FFFFFF"
         android:onClick="addWarehouse"
         android:text="Add Warehouse"
         android:textAllCaps="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="35dp" />
+</LinearLayout>
 </LinearLayout>

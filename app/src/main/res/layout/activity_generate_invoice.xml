@@ -567,36 +567,51 @@
         </LinearLayout>
 
         <LinearLayout
+            android:paddingTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
-
+            <LinearLayout
+                android:paddingRight="2dp"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <Button
+                android:background="@drawable/shape1"
+                android:textColor="#FFFFFF"
                 android:textAllCaps="false"
                 android:textSize="15sp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:text="Generate"
-                android:layout_weight="0.5"
+
                 android:onClick="generate"
                 />
-
+            </LinearLayout>
+<LinearLayout
+    android:layout_weight="0.5"
+    android:paddingRight="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
             <Button
+                android:background="@drawable/shape1"
+                android:textColor="#FFFFFF"
                 android:layout_gravity="right"
                 android:textSize="15sp"
                 android:maxLines="1"
                 android:text="Cancel"
                 android:textAllCaps="false"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_height="35dp"
+
                 android:onClick="cancel"
                 />
+</LinearLayout>
         </LinearLayout>
 
+</LinearLayout>
 
-    </LinearLayout>
 
 
 

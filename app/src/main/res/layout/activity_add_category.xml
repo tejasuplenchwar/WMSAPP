@@ -41,15 +41,17 @@
         android:hint="Category Desc"
    />
 <LinearLayout
-    android:paddingTop="20dp"
+    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <Button
+        android:background="@drawable/shape1"
+        android:textColor="#ffffff"
         android:textAllCaps="false"
         android:text="Add"
         android:id="@+id/categoryAdd"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="35dp" />
 </LinearLayout>
 
 </LinearLayout>

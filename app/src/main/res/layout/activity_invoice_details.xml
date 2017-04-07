@@ -353,30 +353,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.5"
+    android:paddingRight="2dp">
         <Button
+            android:background="@drawable/shape1"
+            android:textColor="#FFFFFF"
             android:textAllCaps="false"
             android:textSize="15sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Download"
-            android:layout_weight="0.5"
-            android:onClick="download"
-            android:paddingRight="1dp"
-            />
 
+            android:onClick="download"
+
+            />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:paddingLeft="2dp">
         <Button
+            android:background="@drawable/shape1"
+            android:textColor="#FFFFFF"
             android:layout_gravity="right"
             android:textSize="15sp"
             android:maxLines="1"
             android:text="Cancel"
             android:textAllCaps="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_height="35dp"
             android:onClick="cancel"
             android:id="@+id/button2"
-            android:paddingLeft="1dp"/>
+           />
+        </LinearLayout>
     </LinearLayout>
 
 

@@ -11,7 +11,7 @@
 
     tools:context="com.example.admin.wmsapp.Activity.activity.LoginActivity">
 
- <LinearLayouts
+ <LinearLayout
     android:paddingTop="50dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,37 +24,46 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/imageView" />
 
-</LinearLayouts>
+</LinearLayout>
 
 
     <LinearLayout
     android:layout_gravity="center_vertical"
-    android:padding="20dp"
+    android:padding="40dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/loginLayout"
        android:background="@drawable/shape"
-       android:padding="20dp"
+       android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         >
 
 
         <EditText
-
+            android:paddingTop="20dp"
+                android:drawableLeft="@drawable/email"
                 android:id="@+id/editUserName"
-                android:hint="enter user name"
+                android:hint="    enter user name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+           />
 
         <EditText
+            android:paddingTop="20dp"
        android:id="@+id/editUserPassword"
-       android:hint="enter password"
+       android:hint="  enter password"
+       android:drawableLeft="@drawable/key"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content" />
+       android:layout_height="wrap_content"
+            android:inputType="textPassword"
+           />
 
 
         <LinearLayout
@@ -63,27 +72,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
+                android:background="@drawable/shape1"
                 android:drawableLeft="@drawable/login"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingRight="2dp"
+                android:layout_height="35dp"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:text="Login"
+                android:textColor="#FFFFFF"
                 android:onClick="login"
                 />
 
-            <Button
-                android:drawableLeft="@drawable/cancel"
-
-                android:layout_weight="0.5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:text="Cancel"
-                android:onClick="cancel"/>
         </LinearLayout>
 
 

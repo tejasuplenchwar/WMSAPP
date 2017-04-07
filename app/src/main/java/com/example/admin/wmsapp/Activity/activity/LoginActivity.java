@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -52,8 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public  final String BASE_URL="http://192.168.100.40:1337/pFactory/";
 
-
-
+      LinearLayout loginLayout;
 
    /* SharedPreferences sharedpreferences;*/
    // {"_id":"58b7e3e7edbefd04c89a98cb","email":"pavitra.rastogi@adnatesolutions.com","name":"Pavitra Rastogi","_orgName":"Adnate","_orgId":"adnate","exp":1490875793,"iat":1490270993}
@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
 
         editUsername= (EditText) findViewById(R.id.editUserName);
         editUserPassword= (EditText) findViewById(R.id.editUserPassword);
-
-
+        loginLayout= (LinearLayout) findViewById(R.id.loginLayout);
+        loginLayout.setAlpha(0.5f);
 
 
 
@@ -246,17 +246,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void cancel(View v){
 
-        Intent  intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-
-    }
 
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+        Intent  intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

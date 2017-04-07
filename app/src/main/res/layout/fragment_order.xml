@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     >
 
 
@@ -17,11 +18,12 @@
 
     <Button
         android:layout_alignParentBottom="true"
-
+        android:background="@drawable/shape1"
+        android:textColor="#FFFFFF"
         android:id="@+id/buttonClick"
         android:text="Invoice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
        />
 
     <android.support.design.widget.CoordinatorLayout
