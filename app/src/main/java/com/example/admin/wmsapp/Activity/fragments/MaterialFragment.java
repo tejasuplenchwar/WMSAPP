@@ -175,6 +175,7 @@ public class MaterialFragment extends Fragment implements AdapterView.OnItemClic
             .readTimeout(10, TimeUnit.SECONDS)
             .connectTimeout(10, TimeUnit.SECONDS)
             .build();
+
     private void getMaterials(){
         final ProgressDialog loading=ProgressDialog.show(getActivity(),"Fetching Data","Please wait...",false,false);
 
@@ -201,7 +202,8 @@ public class MaterialFragment extends Fragment implements AdapterView.OnItemClic
 
             @Override
             public void onFailure(Call<ArrayList<Material>> call, Throwable t) {
-
+                loading.dismiss();
+                Toast.makeText(getActivity(), "Error while fetching data..."+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

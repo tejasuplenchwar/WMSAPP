@@ -6,7 +6,7 @@ package com.example.admin.wmsapp.Activity.Model;
 
 
     public class Constants {
-        public static final String ROOT_URL="http://192.168.0.106:9090/WarehouseMgmt/";
+        public static final String ROOT_URL="http://192.168.0.101:9090/WarehouseMgmt/";
 
 
         public static final String BASE_URL="http://192.168.100.40:1337/";

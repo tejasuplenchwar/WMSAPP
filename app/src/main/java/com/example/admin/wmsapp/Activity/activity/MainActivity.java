@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-TextView textUserName,textOrganisation;
+TextView textUserName,textOrganisation,textTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,8 +110,11 @@ TextView textUserName,textOrganisation;
         View header=navigationView.getHeaderView(0);
         textUserName= (TextView) header.findViewById(R.id.textUserName);
         textOrganisation= (TextView) header.findViewById(R.id.textOrganisation);
+        textTitle= (TextView) header.findViewById(R.id.textTitle);
         textUserName.setText(name);
         textOrganisation.setText(_orgName);
+
+        textTitle.setText(String.valueOf(name.charAt(0)));
         navigationView.setCheckedItem(R.id.nav_dashboard);
         navigationView.setActivated(true);
         navigationView.setNavigationItemSelectedListener(this);

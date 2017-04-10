@@ -3,6 +3,7 @@ package com.example.admin.wmsapp.Activity.activity;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -151,6 +152,7 @@ public class InvoiceDetailsActivity extends AppCompatActivity implements Adapter
         Uri uri=Uri.parse(ROOT_URL+"invoice/files/"+sequenceId);
         DownloadManager.Request request=new DownloadManager.Request(uri);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        //request.setDestinationInExternalPublicDir( Environment.DIRECTORY_DOWNLOADS,"Files");
         Long referrence=downloadManager.enqueue(request);
     }
 
