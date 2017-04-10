@@ -91,11 +91,11 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
 
 
     ImageView materialImage;
-    Bitmap imageBitmap;
+
     String item;
     String []file;
     SearchableSpinner spinnerSearch,spinner;
-    String selectedImagePath;
+
     ArrayList<Category> categories=new ArrayList<>();
     Material material = new Material();
 
@@ -114,7 +114,7 @@ public class AddMaterialActivity extends AppCompatActivity implements AdapterVie
         editMaterialCode= (EditText) findViewById(R.id.editMaterialCode);
         editMaterialName=(EditText)findViewById(R.id.editMaterialName);
         editMaterialDesc=(EditText)findViewById(R.id.editMaterialDesc);
-       // editUnitOfMeasure=(EditText)findViewById(R.id.editUnitOfMeasure);
+
         editUnitPrice=(EditText)findViewById(R.id.editUnitPrice);
         spinnerSearch= (SearchableSpinner) findViewById(R.id.spinnerSearch);
 

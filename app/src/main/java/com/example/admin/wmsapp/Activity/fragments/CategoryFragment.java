@@ -215,6 +215,7 @@ public class CategoryFragment extends Fragment implements SearchView.OnQueryText
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+                        Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
                     }
                 });
 

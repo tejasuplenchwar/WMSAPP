@@ -141,7 +141,8 @@ public class WarehouseFragment extends Fragment implements AdapterView.OnItemCli
 
             @Override
             public void onFailure(Call<ArrayList<Warehouse>> call, Throwable t) {
-
+                loading.dismiss();
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
   }

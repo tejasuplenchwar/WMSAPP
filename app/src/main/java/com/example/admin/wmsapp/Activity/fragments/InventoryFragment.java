@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.admin.wmsapp.Activity.Adapter.InventoryAdapter;
 import com.example.admin.wmsapp.Activity.Model.Inventory;
@@ -118,7 +119,8 @@ public class InventoryFragment extends Fragment implements SearchView.OnQueryTex
 
             @Override
             public void onFailure(Call<ArrayList<Inventory>> call, Throwable t) {
-
+                loading.dismiss();
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.admin.wmsapp.Activity.Adapter.RoleAdapter;
 import com.example.admin.wmsapp.Activity.Model.*;
@@ -72,6 +73,7 @@ public class Role extends Fragment{
             @Override
             public void onFailure(Call<ArrayList<com.example.admin.wmsapp.Activity.Model.Role>> call, Throwable t) {
 
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

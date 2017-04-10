@@ -207,7 +207,7 @@ public class ContractorFragment extends Fragment implements AdapterView.OnItemCl
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
 

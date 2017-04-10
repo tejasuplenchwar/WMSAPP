@@ -144,6 +144,7 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
             @Override
             public void onFailure(Call<ArrayList<com.example.admin.wmsapp.Activity.Model.Role>> call, Throwable t) {
 
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

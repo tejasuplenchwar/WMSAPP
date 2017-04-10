@@ -38,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     //This method is only generating push notification
     //It is same as we did in earlier posts
     private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, InvoiceList.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
@@ -59,7 +59,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
 
-    public Boolean activityforgoundcheck(){
+   /* public Boolean activityforgoundcheck(){
         ActivityManager activityManager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
 
         List<ActivityManager.RunningTaskInfo> services = activityManager
@@ -72,5 +72,5 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             isActivityFound = true;
         }
         return  isActivityFound;
-    }
+    }*/
 }

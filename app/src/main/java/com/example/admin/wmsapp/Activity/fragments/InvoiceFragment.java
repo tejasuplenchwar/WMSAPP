@@ -123,7 +123,8 @@ public class InvoiceFragment extends Fragment  implements AdapterView.OnItemClic
 
             @Override
             public void onFailure(Call<ArrayList<Invoice>> call, Throwable t) {
-
+                loading.dismiss();
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

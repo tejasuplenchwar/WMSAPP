@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.admin.wmsapp.Activity.Services.OrderAPI;
 import com.example.admin.wmsapp.R;
@@ -71,6 +72,7 @@ public class TabTwo extends Fragment {
             @Override
             public void onFailure(Call<ArrayList<Object[]>> call, Throwable t) {
 
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

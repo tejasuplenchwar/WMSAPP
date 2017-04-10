@@ -142,7 +142,8 @@ public class InwardFragment extends Fragment implements  AdapterView.OnItemClick
 
            @Override
            public void onFailure(Call<ArrayList<Inward>> call, Throwable t) {
-
+               loading.dismiss();
+               Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
            }
        });
     }

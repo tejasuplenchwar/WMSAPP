@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import com.example.admin.wmsapp.Activity.Model.Inventory;
@@ -76,6 +77,7 @@ public class TabOne extends Fragment {
             @Override
             public void onFailure(Call<ArrayList<Warehouse>> call, Throwable t) {
 
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -205,7 +205,8 @@ public class OrderFragment extends Fragment implements AdapterView.OnItemClickLi
 
             @Override
             public void onFailure(Call<ArrayList<Order>> call, Throwable t) {
-
+                loading.dismiss();
+                Toast.makeText(getActivity(), "Error-"+t, Toast.LENGTH_SHORT).show();
             }
         });
 

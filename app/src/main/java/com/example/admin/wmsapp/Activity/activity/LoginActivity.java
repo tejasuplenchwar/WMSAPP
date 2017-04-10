@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
+import com.example.admin.wmsapp.Activity.Model.Login;
 import com.example.admin.wmsapp.R;
 
 import org.json.JSONException;
@@ -251,6 +252,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
         Intent  intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
