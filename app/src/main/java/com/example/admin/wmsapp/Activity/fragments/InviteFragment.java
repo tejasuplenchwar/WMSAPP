@@ -53,7 +53,7 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
 
     ArrayList<Role> roleList=new ArrayList<>();
     Role role=new Role();
-    String roleCode;
+    String roleCode="";
 
 
 
@@ -102,7 +102,12 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
         buttonInviteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              inviteUser();
+                if(!roleCode.equals("")) {
+                    inviteUser();
+                }
+                else{
+                    Toast.makeText(getActivity(), "Select Role First...", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -163,7 +168,7 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
      role= (Role) parent.getSelectedItem();
-
+      roleCode=role.getRole_code();
 
         if(role.getRole_code().equals("CTR")){
             editPhone.setVisibility(View.VISIBLE);
@@ -195,6 +200,22 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
     private void inviteUser(){
         if(role.getRole_code().equals("CTR"))
         {
+            if(editFirstName.getText().toString().isEmpty()){
+                editFirstName.setError("enter first name");
+            }
+            if(editLastName.getText().toString().isEmpty()){
+                editLastName.setError("enter last name");
+            }
+            if(editEmailAddress.getText().toString().isEmpty()){
+                editEmailAddress.setError("enter email address");
+            }
+            if(editContractorCode.getText().toString().isEmpty()){
+                editContractorCode.setError("enter contractor code ");
+            }
+            if(editPhone.getText().toString().isEmpty()){
+                editPhone.setError("enter phone number ");
+            }
+
             Contractor contractor=new Contractor();
             contractor.setCtrName(editFirstName.getText().toString());
             contractor.setCtrEmailId(editEmailAddress.getText().toString());
@@ -222,6 +243,15 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
             });
         }
         else{
+            if(editFirstName.getText().toString().isEmpty()){
+                editFirstName.setError("enter first name");
+            }
+            if(editLastName.getText().toString().isEmpty()){
+                editLastName.setError("enter last name");
+            }
+            if(editEmailAddress.getText().toString().isEmpty()){
+                editEmailAddress.setError("enter email address");
+            }
             user.setFname(editFirstName.getText().toString());
             user.setLname(editLastName.getText().toString());
             user.setEmail(editEmailAddress.getText().toString());
@@ -245,6 +275,15 @@ public class InviteFragment extends Fragment implements  AdapterView.OnItemSelec
         }
     }
          private void  pUserInvite(){
+             if(editFirstName.getText().toString().isEmpty()){
+                 editFirstName.setError("enter first name");
+             }
+             if(editLastName.getText().toString().isEmpty()){
+                 editLastName.setError("enter last name");
+             }
+             if(editEmailAddress.getText().toString().isEmpty()){
+                 editEmailAddress.setError("enter email address");
+             }
                user.setFname(editFirstName.getText().toString());
                user.setLname(editLastName.getText().toString());
                user.setEmail(editEmailAddress.getText().toString());

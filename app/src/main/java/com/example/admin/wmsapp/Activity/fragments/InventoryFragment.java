@@ -161,10 +161,12 @@ public class InventoryFragment extends Fragment implements SearchView.OnQueryTex
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Inventory>(inventories);
+        mAllData = new ArrayList<Inventory>();
         for (Inventory inventory : inventories) {
-            if (!inventory.getWarehouse().getWarehouseName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(inventory);
+            if (inventory.getWarehouse().getWarehouseName().toLowerCase().contains(newText.toLowerCase())
+                    ||inventory.getMaterial().getMaterialName().toLowerCase().contains(newText.toLowerCase())
+                    ||inventory.getMaterial().getMaterialCode().toLowerCase().contains(newText.toLowerCase())) {
+                mAllData.add(inventory);
             }
         }
         adapter = new InventoryAdapter(getActivity(), mAllData);

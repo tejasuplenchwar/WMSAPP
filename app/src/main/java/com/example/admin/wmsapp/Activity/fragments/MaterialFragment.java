@@ -106,17 +106,15 @@ public class MaterialFragment extends Fragment implements AdapterView.OnItemClic
             return false;
         }
 
-        mAllData = new ArrayList<Material>(materials);
+        mAllData = new ArrayList<Material>();
         for (Material material : materials) {
-            if (!material.getMaterialName().toLowerCase().contains(newText.toLowerCase())) {
-              if(!material.getMaterialCode().toLowerCase().contains(newText.toLowerCase())){
-
+            if (material.getMaterialName().toLowerCase().contains(newText.toLowerCase())||material.getMaterialCode().toLowerCase().contains(newText.toLowerCase())) {
+               mAllData.add(material);
               }
-                  mAllData.remove(material);
             }
 
 
-        }
+
         adapter = new MaterialAdapter(getActivity(), mAllData);
 
 

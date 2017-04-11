@@ -271,6 +271,29 @@ public class CategoryFragment extends Fragment implements SearchView.OnQueryText
 
     @Override
     public boolean onQueryTextChange(String newText) {
+        if (newText == null || newText.trim().isEmpty()) {
+            resetSearch();
+            return false;
+        }
+        mAllData = new ArrayList<Category>();
+        for (Category category : categoryArrayList) {
+            if (category.getCategoryName().toLowerCase().contains(newText.toLowerCase())
+                    ||category.getCategoryDesc().toLowerCase().contains(newText.toLowerCase())
+                   ) {
+                mAllData.add(category);
+            }
+
+        }
+
+        adapter = new CategoryAdapter(getActivity(), mAllData);
+        listView.setAdapter(adapter);
+
         return false;
+
+    }
+
+    public void resetSearch() {
+        adapter = new CategoryAdapter(getActivity(), categoryArrayList);
+        listView.setAdapter(adapter);
     }
 }

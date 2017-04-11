@@ -76,7 +76,7 @@ public class AddOrderActivity extends AppCompatActivity {
     double availableQuantity;
 
     int count,count1,catId;
-    String materialName,unitOfMeasure1;
+    String materialName="",unitOfMeasure1;
 
     SearchableSpinner wSpinner,cSpinner,mSpinner,spinnerCategory;
     TextView unitOfMeasure,availableQty;
@@ -357,17 +357,23 @@ public class AddOrderActivity extends AppCompatActivity {
             orderQuantity.setError("please see available quantity first");
         }
         else {
-            OrderList orderList = new OrderList();
-            orderList.setMaterialId(materialId);
-            orderList.setMaterialName(materialName);
-            orderList.setUnitMeasure(unitOfMeasure1);
-            orderList.setOrderQty(Double.parseDouble(orderQuantity.getText().toString()));
+            if(materialName.equals("")){
+                Toast.makeText(this, "Please select material", Toast.LENGTH_SHORT).show();
+            }
+           else{
+                OrderList orderList = new OrderList();
+                orderList.setMaterialId(materialId);
+                orderList.setMaterialName(materialName);
+                orderList.setUnitMeasure(unitOfMeasure1);
+                orderList.setOrderQty(Double.parseDouble(orderQuantity.getText().toString()));
 
-            orders.add(orderList);
+                orders.add(orderList);
 
-            showList();
+                showList();
 
-            orderQuantity.setText("");
+                orderQuantity.setText("");
+            }
+
         }
     }
 

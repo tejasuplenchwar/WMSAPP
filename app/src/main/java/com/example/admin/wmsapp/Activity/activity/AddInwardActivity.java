@@ -59,7 +59,7 @@ public class AddInwardActivity extends AppCompatActivity implements AdapterView.
     ArrayList<Category> categories=new ArrayList<>();
 
     SearchableSpinner spinnerCategory,spinner,wSpinner;
-    String materialName,unitOfMeasure;
+    String materialName="",unitOfMeasure="";
     int materialId,warehouseId;
      int count;
      int categoryId;
@@ -254,25 +254,31 @@ public class AddInwardActivity extends AppCompatActivity implements AdapterView.
     public void addmaterial(View v) throws JSONException {
 
 
+
         if(editMatQuantity.getText().length()==0 ) {
             editMatQuantity.setError("enter quantity");
 
         }
         else {
-            MaterialList materialList = new MaterialList();
-            materialList.setMaterialID(materialId);
-            materialList.setMaterialName(materialName);
-            materialList.setUnitOfMeasure(unitOfMeasure);
-            materialList.setInQty(Double.parseDouble(editMatQuantity.getText().toString()));
+            if(materialName.equals("")&&unitOfMeasure.equals("")){
+                Toast.makeText(this, "Please select material", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                MaterialList materialList = new MaterialList();
+                materialList.setMaterialID(materialId);
+                materialList.setMaterialName(materialName);
+                materialList.setUnitOfMeasure(unitOfMeasure);
+                materialList.setInQty(Double.parseDouble(editMatQuantity.getText().toString()));
 
-            materials.add(materialList);
+                materials.add(materialList);
 
 
-            //editMaterialId.setText("");
-            editMatQuantity.setText("");
-            textUnitOfMeasure.setText("");
+                //editMaterialId.setText("");
+                editMatQuantity.setText("");
+                textUnitOfMeasure.setText("");
 
-            showList();
+                showList();
+            }
         }
     }
 

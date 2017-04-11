@@ -57,13 +57,13 @@ public class InventoryAdapter extends ArrayAdapter<Inventory>{
         TextView textMaterialName=(TextView)layout.findViewById(R.id.textMaterialName);
         TextView textWarehouseName=(TextView)layout.findViewById(R.id.textWarehouseName);
         TextView unitPrice=(TextView)layout.findViewById(R.id.unitPrice);
-        TextView totalQuantity=(TextView)layout.findViewById(R.id.totalQuantity);
+        TextView materialCode=(TextView)layout.findViewById(R.id.materialCode);
         TextView availableQuantity=(TextView)layout.findViewById(R.id.availableQuantity);
 
         textMaterialName.setText(inventory.getMaterial().getMaterialName());
         textWarehouseName.setText(inventory.getWarehouse().getWarehouseName());
         unitPrice.setText(" "+inventory.getMaterial().getUnitPrice());
-        totalQuantity.setText(" "+inventory.getTotalQty());
+        materialCode.setText(inventory.getMaterial().getMaterialCode());
         availableQuantity.setText(" "+inventory.getAvailableQty());
         return layout;
     }

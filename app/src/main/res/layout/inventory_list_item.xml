@@ -44,15 +44,15 @@
         <TextView
             android:textColor="#2b2929"
             android:textSize="15sp"
-            android:text="Total Quantity"
+            android:text="Material Code"
             android:layout_weight="0.6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:textSize="15sp"
-            android:id="@+id/totalQuantity"
-            android:text="totalqty"
+            android:id="@+id/materialCode"
+            android:text="mtrl code"
             android:layout_weight="0.4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -252,10 +252,12 @@ public class WarehouseFragment extends Fragment implements AdapterView.OnItemCli
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Warehouse>(warehouses);
+        mAllData = new ArrayList<Warehouse>();
         for (Warehouse warehouse : warehouses) {
-            if (!warehouse.getWarehouseName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(warehouse);
+            if (warehouse.getWarehouseName().toLowerCase().contains(newText.toLowerCase())
+                    ||warehouse.getWarehouseLoc().toLowerCase().contains(newText.toLowerCase())
+                    ||warehouse.getwRegion().toLowerCase().contains(newText.toLowerCase())) {
+                mAllData.add(warehouse);
             }
         }
         adapter = new WarehouseAdapter(getActivity(), mAllData);

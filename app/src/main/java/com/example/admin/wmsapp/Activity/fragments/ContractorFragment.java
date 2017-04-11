@@ -254,19 +254,20 @@ public class ContractorFragment extends Fragment implements AdapterView.OnItemCl
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Contractor>(contractors);
+        mAllData = new ArrayList<Contractor>();
         for (Contractor contractor : contractors) {
-            if (!contractor.getCtrName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(contractor);
+            if (contractor.getCtrName().toLowerCase().contains(newText.toLowerCase())
+                    ||contractor.getCtrEmailId().toLowerCase().contains(newText.toLowerCase())
+                    ||contractor.getCtrAddress().toLowerCase().contains(newText.toLowerCase())||
+                    contractor.getCtrNum().toLowerCase().contains(newText.toLowerCase())) {
+                mAllData.add(contractor);
             }
-           /* if(contractor.getCtrName().toLowerCase().contains(newText.toLowerCase())||contractor.getCtrAddress().toLowerCase().contains(newText.toLowerCase())){
-                filterList.add(contractor);
-            }*/
+
         }
-        if(getActivity()!=null) {
+
             adapter = new ContractorAdapter(getActivity(), mAllData);
             listViewContractors.setAdapter(adapter);
-        }
+
         return false;
     }
     public void resetSearch() {

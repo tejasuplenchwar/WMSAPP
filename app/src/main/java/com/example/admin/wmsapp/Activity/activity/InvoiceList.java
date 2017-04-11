@@ -160,15 +160,18 @@ public class InvoiceList extends AppCompatActivity implements  AdapterView.OnIte
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Invoice>(invoiceList);
+        mAllData = new ArrayList<Invoice>();
         for (Invoice invoice : invoiceList) {
-            if (!invoice.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(invoice);
+
+            if(invoice.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())||invoice.getSequenceId().toLowerCase().contains(newText.toLowerCase())){
+
+                mAllData.add(invoice);
             }
+
         }
         adapter = new InvoiceAdapter(this, mAllData);
         listView.setAdapter(adapter);
-
+        adapter.notifyDataSetChanged();
         return false;
     }
     public void resetSearch() {

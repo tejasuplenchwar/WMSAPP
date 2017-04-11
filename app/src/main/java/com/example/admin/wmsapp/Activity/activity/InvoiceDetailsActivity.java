@@ -24,6 +24,7 @@ import com.example.admin.wmsapp.Activity.RootObject.InvoiceTax;
 import com.example.admin.wmsapp.Activity.Services.InvoiceAPI;
 import com.example.admin.wmsapp.R;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -147,15 +148,23 @@ public class InvoiceDetailsActivity extends AppCompatActivity implements Adapter
     }
 
 
-    public void download(View v){
-        downloadManager= (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri=Uri.parse(ROOT_URL+"invoice/files/"+sequenceId);
-        DownloadManager.Request request=new DownloadManager.Request(uri);
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        //request.setDestinationInExternalPublicDir( Environment.DIRECTORY_DOWNLOADS,"Files");
-        Long referrence=downloadManager.enqueue(request);
-    }
+    public void download(View v) {
 
+        File applictionFile = new File(Environment.
+                getExternalStoragePublicDirectory(Environment
+                        .DIRECTORY_DOWNLOADS).getAbsolutePath(), sequenceId+".pdf");
+        if (applictionFile.exists()) {
+            Toast.makeText(this, "File Already Exists",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+            Uri uri = Uri.parse(ROOT_URL + "invoice/files/" + sequenceId);
+            DownloadManager.Request request = new DownloadManager.Request(uri);
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, sequenceId+".pdf");
+            Long reference = downloadManager.enqueue(request);
+        }
+    }
 
 
     public void cancel(View v){

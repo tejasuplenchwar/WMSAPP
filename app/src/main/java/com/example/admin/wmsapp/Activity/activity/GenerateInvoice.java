@@ -212,8 +212,10 @@ public class GenerateInvoice extends AppCompatActivity  implements AdapterView.O
         invoice.setInvoiceStatus("pending");
         invoice.setPdfPath("");
         invoice.setPurchaseOrder(result);
-        invoice.setDiscountPt(Double.parseDouble(editDiscount.getText().toString()));
-        invoice.setOrgId(MainActivity._orgId);
+        if(!editDiscount.getText().toString().isEmpty()) {
+            invoice.setDiscountPt(Double.parseDouble(editDiscount.getText().toString()));
+
+        }invoice.setOrgId(MainActivity._orgId);
 
         InvoiceTax invoiceTax=new InvoiceTax();
         invoiceTax.setTaxList(taxList);

@@ -279,10 +279,13 @@ public class OrderFragment extends Fragment implements AdapterView.OnItemClickLi
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Order>(orders);
+        mAllData = new ArrayList<Order>();
         for (Order order : orders) {
-            if (!order.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(order);
+            if (order.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())
+                    ||order.getSequenceId().toLowerCase().contains(newText.toLowerCase())
+                    ||order.getWarehouse().getWarehouseName().toLowerCase().contains(newText.toLowerCase())
+                    ||order.getOrderMasterInvoiceStatus().toLowerCase().contains(newText.toLowerCase())) {
+                mAllData.add(order);
             }
         }
         adapter = new OrderAdapter(getActivity(), mAllData);

@@ -185,10 +185,11 @@ public class InvoiceFragment extends Fragment  implements AdapterView.OnItemClic
             resetSearch();
             return false;
         }
-        mAllData = new ArrayList<Invoice>(invoiceList);
+        mAllData = new ArrayList<Invoice>();
         for (Invoice invoice : invoiceList) {
-            if (!invoice.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())) {
-                mAllData.remove(invoice);
+            if (invoice.getContractor().getCtrName().toLowerCase().contains(newText.toLowerCase())
+                    ||invoice.getSequenceId().toLowerCase().contains(newText.toLowerCase())) {
+                mAllData.add(invoice);
             }
         }
         adapter = new InvoiceAdapter(getActivity(), mAllData);
